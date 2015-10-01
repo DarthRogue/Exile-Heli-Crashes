@@ -1,0 +1,1 @@
+7 createVehcileLocal !"_smoke1 = "#particlesource" createVehicleLocal getpos _v;"
