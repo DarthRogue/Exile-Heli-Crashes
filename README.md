@@ -15,17 +15,21 @@ INSTALLATION:
 
 1.  Open the HeliCrashes.sqf file line 9 set how many crash instances you want to be active on the server per restart.  This can be any number, just be aware that if you go too crazy with it then having all those objects on the server may hurt server performance.
 
-2.   On line 11 enter the center pos for your map into the array.  See the bottom of this file for the correct center pos for pretty much every map out there for A3.
+2.  On line 11 enter the center pos for your map into the array.  See the bottom of this file for the correct center pos for pretty much every map out there for A3.
 
 3.  On line 13 specify how far from the map center you want crashes to spawn.  This value should not exceed the lowest value of your center pos x or y coords.  For instance, if your map center pos is [12000,10000,0], then the distance from center should not exceed 10000.
 
 4.  Open your config.cpp file in exile_server_settings.pbo and in your loot table include the three building classes included with the download in this Git.  That will tell the server where to spawn the loot piles around the wrecks.
 
-5.  Add the included scripts.txt filter to your scripts.txt file.
+5.  Open your exile_server.pbo and rename your existing ExileServer_system_lootManager_spawnLootForPlayer.sqf to ExileServer_system_lootManager_spawnLootForPlayer_old.sqf.
 
-6.  PBO the helicrash folder after you've made your relevant changes and place it in your @exileserver\addons folder
+6.  Copy the ExileServer_system_lootManager_spawnLootForPlayer.sqf from the download into your ExileServer.pbo.
 
-7.  PROFIT!!
+7.  Add the included scripts.txt filter to your scripts.txt file.
+
+8.  PBO the helicrash folder after you've made your relevant changes and place it in your @exileserver\addons folder
+
+9.  PROFIT!!
 
 
 NOTE:  The crashes are tied to the Exile loot spawn system.  That being the case, they are bound to the same rules and restrictions as any loot spawning building, meaning that they will not all always have loot.  I believe
