@@ -21,9 +21,17 @@ INSTALLATION:
 
 4.  Open your config.cpp file in exile_server_settings.pbo and in your loot table include the three building classes included with the download in this Git.  That will tell the server where to spawn the loot piles around the wrecks.
 
-5.  Open your exile_server.pbo and rename your existing ExileServer_system_lootManager_spawnLootForPlayer.sqf to ExileServer_system_lootManager_spawnLootForPlayer_old.sqf.
+5.  Open your exile_server.pbo and copy ExileServer_system_lootManager_spawnLootForPlayer.sqf to your desktop.
 
-6.  Copy the ExileServer_system_lootManager_spawnLootForPlayer.sqf from the download into your ExileServer.pbo.
+6.  Open the above mentioned sqf file and immediately after line 38 paste the following 7 lines.  Then save the file and copy it back into your exile_server.pbo - 
+
+		//these next 6 lines add the wreck classes to the spawnable buildings array for the heliCrashes
+		_truckWrecks = _playerPosition nearObjects ["Land_Wreck_HMMWV_F", _spawnRadius];
+		_buildings append _truckWrecks;
+		_heliwrecks2 = _playerPosition nearObjects ["Land_UWreck_Heli_Attack_02_F", _spawnRadius];
+		_buildings append _heliwrecks2;
+		_heliWrecks1 = _playerPosition nearObjects ["Land_Wreck_Heli_Attack_01_F", _spawnRadius];
+		_buildings append _heliWrecks1;
 
 7.  Add the included scripts.txt filter to your scripts.txt file.
 
