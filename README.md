@@ -5,6 +5,7 @@ Random Heli Crashes w/ Loot
 //        Created by: Richie         //
 //  Modded by:  Vampire & xBowBii    //
 //  Modded for Exile by Darth_Rogue  //
+//		& Shamis	     //
 ///////////////////////////////////////
 
 This addon PBO will allow you to spawn heli crashes at random positions on your server which will also spawn random loot for players.  In my opinion the best thing
