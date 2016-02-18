@@ -4,6 +4,7 @@ private "_crashNum";
 //        Created by: Richie         //
 //  Modded by:  Vampire & xBowBii    //
 //  Modded for Exile by Darth_Rogue  //
+//		& Shamis	     //
 ///////////////////////////////////////
 // Number of Crashes
 _crashNum = 15;
