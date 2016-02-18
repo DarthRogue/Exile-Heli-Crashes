@@ -23,26 +23,23 @@ INSTALLATION:
 
 5.  Open your exile_server.pbo and copy ExileServer_system_lootManager_spawnLootForPlayer.sqf to your desktop.
 
-6.  Open the above mentioned sqf file and paste the following 7 lines immediately AFTER the line that says:
+6.  Open the above mentioned sqf file and paste the following 5 lines immediately AFTER the line that says:
 
 	_buildings = _playerPosition nearObjects ["House", _spawnRadius];
   
 
-		//these next 6 lines add the wreck classes to the spawnable buildings array for the heliCrashes
+		//these next 4 lines add the wreck classes to the spawnable buildings array for the heliCrashes
 		_truckWrecks = _playerPosition nearObjects ["Land_Wreck_HMMWV_F", _spawnRadius];
 		_buildings append _truckWrecks;
-		_heliwrecks2 = _playerPosition nearObjects ["Land_UWreck_Heli_Attack_02_F", _spawnRadius];
-		_buildings append _heliwrecks2;
-		_heliWrecks1 = _playerPosition nearObjects ["Land_Wreck_Heli_Attack_01_F", _spawnRadius];
-		_buildings append _heliWrecks1;
+		_heliwrecks = _playerPosition nearObjects ["Land_UWreck_Heli_Attack_02_F", _spawnRadius];
+		_buildings append _heliwrecks;
+		
 		
 7.  Then save the file and copy it back into your exile_server.pbo - 
 
-8.  Add the included scripts.txt filter to your scripts.txt file.
+8.  PBO the helicrash folder after you've made your relevant changes and place it in your @exileserver\addons folder
 
-9.  PBO the helicrash folder after you've made your relevant changes and place it in your @exileserver\addons folder
-
-10.  PROFIT!!
+9.  PROFIT!!
 
 
 NOTE:  The crashes are tied to the Exile loot spawn system.  That being the case, they are bound to the same rules and restrictions as any loot spawning building, meaning that they will not all always have loot.  I believe
