@@ -19,18 +19,19 @@ _shoremode = 0; // 0: does not have to be at a shore , 1: must be at a shore
 
 
 vSpawnCrashes = {
-	for "_j" from 1 to _crashNum do {
-		_posOfCrash = [_spawnCenter,_min,_max,_mindist,_water,20,_shoremode] call BIS_fnc_findSafePos; // find a random location
-		_helicopters = ["Land_Wreck_HMMWV_F","Land_UWreck_Heli_Attack_02_F"]; //Add crash classnames here
-		_element = _helicopters call BIS_fnc_SelectRandom;
-		_vehHeli = _element createVehicle [0,0,0];
-		_burnthefucker = "test_EmptyObjectForFireBig" createVehicle (position _vehHeli);  
-		_burnthefucker attachto [_vehHeli, [0,0,-1]];
-		_vehHeli setPos _posOfCrash;
-		_heliPos = getPosATL _vehHeli;
-		_vehHeli setPosATL _heliPos;
-		diag_log format["HELICRASHES: %1 spawned at %2", _element, _posOfCrash];
-		
+	for "_j" from 1 to _crashNum do 
+	{
+		_crashPOS = [_centerPOS,_minDistCenter,_maxDist,_minDist,_waterMode,20,_landMode] call BIS_fnc_findSafePos;
+		_wrecks = ["Land_Wreck_HMMWV_F","Land_UWreck_Heli_Attack_02_F"]; 
+		_spawnMe = _wrecks call BIS_fnc_SelectRandom;
+		_heli = _spawnMe createVehicle [0,0,0];
+		_fire = "test_EmptyObjectForFireBig" createVehicle (position _heli);
+		_fire attachto [_heli, [0,0,-1]];
+		_heli setDir (random 360);
+		_heli setPos _crashPOS;
+		_heliPos = getPosATL _heli;
+		_heli setPosATL _heliPos;
+		diag_log format["HELICRASHES: %1 spawned at %2", _spawnMe, _crashPOS];
 	};
 };
 
