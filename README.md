@@ -26,14 +26,16 @@ INSTALLATION:
 
 6.  Open the above mentioned sqf file and paste the following 5 lines immediately AFTER the line that says:
 
-	_buildings = _playerPosition nearObjects ["House", _spawnRadius];
+	_buildings = _playerObject nearObjects ["House", _spawnRadius];
   
 
 		//these next 4 lines add the wreck classes to the spawnable buildings array for the heliCrashes
-		_truckWrecks = _playerPosition nearObjects ["Land_Wreck_HMMWV_F", _spawnRadius];
-		_buildings append _truckWrecks;
-		_heliwrecks = _playerPosition nearObjects ["Land_UWreck_Heli_Attack_02_F", _spawnRadius];
-		_buildings append _heliwrecks;
+		_truckWrecks = _playerObject nearObjects ["Land_Wreck_HMMWV_F", _spawnRadius];
+  		_buildings append _truckWrecks;
+
+  		_heliwrecks2 = _playerObject nearObjects ["Land_UWreck_Heli_Attack_02_F", _spawnRadius];
+  		_buildings append _heliwrecks2;
+
 		
 		
 7.  Then save the file and copy it back into your exile_server.pbo - 
