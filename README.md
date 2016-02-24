@@ -33,8 +33,8 @@ INSTALLATION:
 		_truckWrecks = _playerObject nearObjects ["Land_Wreck_HMMWV_F", _spawnRadius];
   		_buildings append _truckWrecks;
 
-  		_heliwrecks2 = _playerObject nearObjects ["Land_UWreck_Heli_Attack_02_F", _spawnRadius];
-  		_buildings append _heliwrecks2;
+  		_heliwrecks = _playerObject nearObjects ["Land_UWreck_Heli_Attack_02_F", _spawnRadius];
+  		_buildings append _heliwrecks;
 
 		
 		
