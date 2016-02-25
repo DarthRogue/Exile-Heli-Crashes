@@ -7,16 +7,13 @@ private "_crashNum";
 //		& Shamis	     //
 ///////////////////////////////////////
 // Number of Crashes
-_crashNum = 15;
-//							
-_spawnCenter = [6140.467773, 5941.604004, 0.0]; //Center of your map 
-_min = 0; // minimum distance from the center position (Number) in meters
-_max = 5800; // maximum distance from the center position (Number) in meters
-_mindist = 20; // minimum distance from the nearest object (Number) in meters, ie. spawn at least this distance away from anything within x meters..
-//Low _mindist means helicrashes could spawn near towns or in forests.. higher the number it would be spawning in an open field etc
-_water = 0; // water mode 0: cannot be in water , 1: can either be in water or not , 2: must be in water
-_shoremode = 0; // 0: does not have to be at a shore , 1: must be at a shore
-
+_crashNum = 20;
+_centerPOS = [13422,19988,0]; //[10088,9045,0]; original  [6145,6010,0]; esseker
+_minDistCenter = 0; // minimum distance from the center position (Number) in meters
+_maxDist = 12000; // maximum distance from the center position (Number) in meters
+_minDist = 20; // minimum distance from the nearest object (Number) in meters, ie. spawn at least this distance away from anything within x meters. Low _mindist means helicrashes could spawn near towns or in forests.. higher the number it would be spawning in an open field etc
+_waterMode = 0; // water mode 0: cannot be in water , 1: can either be in water or not , 2: must be in water
+_landMode = 0; // 0: does not have to be at a shore , 1: must be at a shore
 
 vSpawnCrashes = {
 	for "_j" from 1 to _crashNum do 
