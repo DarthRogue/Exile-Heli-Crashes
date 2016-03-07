@@ -22,23 +22,13 @@ INSTALLATION:
 
 4.  Open your config.cpp file in exile_server_settings.pbo and in your loot table include the three building classes included with the download in this Git.  That will tell the server where to spawn the loot piles around the wrecks.
 
-5.  Open your exile_server.pbo and copy ExileServer_system_lootManager_spawnLootForPlayer.sqf to your desktop.
+5.  Open your mission.pbo and copy ExileClient_system_lootManager_thread_spawn.sqf from the download here into your 'mission\custom' folder.  If you don't have a 'custom' folder in your mission.pbo, then you can add one yourself.
 
-6.  Open the above mentioned sqf file and paste the following 5 lines immediately AFTER the line that says:
-
-	_buildings = _playerObject nearObjects ["House", _spawnRadius];
-  
-
-		//these next 4 lines add the wreck classes to the spawnable buildings array for the heliCrashes
-		_truckWrecks = _playerObject nearObjects ["Land_Wreck_HMMWV_F", _spawnRadius];
-  		_buildings append _truckWrecks;
-
-  		_heliwrecks = _playerObject nearObjects ["Land_UWreck_Heli_Attack_02_F", _spawnRadius];
-  		_buildings append _heliwrecks;
-
+6.  Open your mission's config.cpp and under CfgExileCustomCode add this:
+	
+	ExileClient_system_lootManager_thread_spawn = "custom\ExileClient_system_lootManager_thread_spawn.sqf"; //loot spawn for heli crashes
 		
-		
-7.  Then save the file and copy it back into your exile_server.pbo - 
+7.  Save the mission config.cpp file and copy it back into your mission.pbo  and repack the PBO if necessary. 
 
 8.  PBO the helicrash folder after you've made your relevant changes and place it in your @exileserver\addons folder
 
