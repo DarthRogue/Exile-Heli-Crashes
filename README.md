@@ -20,14 +20,15 @@ INSTALLATION:
 
 3.  On line 13 specify how far from the map center you want crashes to spawn.  This value should not exceed the lowest value of your center pos x or y coords.  For instance, if your map center pos is [12000,10000,0], then the distance from center should not exceed 10000.
 
-4.  Open your config.cpp file in exile_server_settings.pbo and in your loot table include the three building classes included with the download in this Git.  That will tell the server where to spawn the loot piles around the wrecks.
+4.  Open your config.cpp file in exile_server_settings.pbo and in your loot table include the two building classes included with the download in this Git.  That will tell the server where to spawn the loot piles around the wrecks.  If you have loot positions for additional wreck classes you will have to add those wreck class names to the loot spawn script.  See step 6 for details.
 
 5.  Open your mission.pbo and copy ExileClient_system_lootManager_thread_spawn.sqf from the download here into your 'mission\custom' folder.  If you don't have a 'custom' folder in your mission.pbo, then you can add one yourself.
 
 6.  Open your mission's config.cpp and under CfgExileCustomCode add this:
 	
 	ExileClient_system_lootManager_thread_spawn = "custom\ExileClient_system_lootManager_thread_spawn.sqf"; //loot spawn for heli crashes
-		
+	NOTE:  If you have loot positions for additional wreck classes you must add the class names to the forEach array on line 23 of ExileClient_system_lootManager_thread_spawn.sqf.
+
 7.  Save the mission config.cpp file and copy it back into your mission.pbo  and repack the PBO if necessary. 
 
 8.  PBO the helicrash folder after you've made your relevant changes and place it in your @exileserver\addons folder
