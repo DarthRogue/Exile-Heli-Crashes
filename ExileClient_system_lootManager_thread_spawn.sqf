@@ -20,7 +20,7 @@ _lootLifeTime = getNumber (missionConfigFile >> "CfgExileLootSettings" >> "lifeT
 _buildings = [];
 {
   	_buildings append (player nearObjects [_x, _spawnRadius]);
-} forEach ["House","Land_Wreck_HMMWV_F","Land_UWreck_Heli_Attack_02_F"];
+} forEach ["House","Land_Wreck_HMMWV_F","Land_UWreck_Heli_Attack_02_F","Land_Wreck_Plane_Transport_01_F","Land_Wreck_Heli_Attack_01_F","Land_UWreck_MV22_F","Land_Wreck_Slammer_F"];
 _buildingNetIdsToSpawnLootIn = [];
 {
 	_building = _x;
